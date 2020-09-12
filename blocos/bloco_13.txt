@@ -1,0 +1,5 @@
+Origen: Cook
+Destino: Ross
+Mensagem: Ola Ross. Meu nome é Cook.
+Hash:
+Hash Anterior: Vazio

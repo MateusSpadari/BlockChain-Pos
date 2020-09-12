@@ -1,0 +1,5 @@
+Origen: England
+Destino: Lugo
+Mensagem: Ola Lugo. Meu nome é England.
+Hash:
+Hash Anterior: Vazio

@@ -1,0 +1,5 @@
+Origen: Lugo
+Destino: Rodrigues
+Mensagem: Ola Rodrigues. Meu nome é Lugo.
+Hash:
+Hash Anterior: Vazio
