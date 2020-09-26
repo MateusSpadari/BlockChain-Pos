@@ -9,10 +9,13 @@ mensagens.each do |n|
   if n.include? "decoder"
     next
   end
+
   file = File.open(n)
   file_data = file.read
   plain = Base64.decode64(file_data)
   File.write("mensagem_#{n.scan(/\d/).join('')}_decoded.txt", plain)
   file.close
 end
+
+puts "Novos arquivos 'mensagem_xxx_decoded.txt' criados."
 
