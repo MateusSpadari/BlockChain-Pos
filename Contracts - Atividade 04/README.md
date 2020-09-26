@@ -23,7 +23,7 @@ contract Presence {
         office[employee].presences = 0;
     }
     
-    //função para registrar a precensa do funcionário
+    //função para registrar a presença do funcionário
     function recordPresence() public {
         if (msg.sender == manager || office[msg.sender].onWorkSchedule == false) return;
         office[msg.sender].presences += 1;
