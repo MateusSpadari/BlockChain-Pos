@@ -5,7 +5,7 @@ keys_array = ["Betts", "Chase", "Cook", "Cummings", "Eaton", "England", "Fountai
 
 keys_array.each do |value|
   key = File.open("#{value}_private_key.pem")
-  private_key = OpenSSL::PKey::RSA.new(File.read(private_key))
+  private_key = OpenSSL::PKey::RSA.new(File.read(key))
 
   y = 0
 
