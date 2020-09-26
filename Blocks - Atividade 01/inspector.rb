@@ -8,13 +8,16 @@ keys.each do |n|
   array_data.push(file_data)
   file.close
 
-  if array_data[n].split().last == "Vazio"
+  if array_data[n].split().last.include? "Vazio"
     # puts "bloco #{n+1} correto."
-  elsif array_data[n].split().last == array_data[n-1].split().last
+  elsif array_data[n].split().last == array_data[n-1].split("\n")[3].match(/\b[a-f0-9]{64}\b/) 
+    puts "No elsif"
     # puts "bloco #{n+1} correto."
   else
+    puts "No else"
     # puts "bloco #{n+1} incorreto."
     puts array_data[n].split().last
+    puts array_data[n-1].split("\n")[3].match(/\b[a-f0-9]{64}\b/)
   end
 end
 

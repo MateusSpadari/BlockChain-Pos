@@ -1,13 +1,18 @@
 require "base64"
 require 'openssl'
 
-x = 0
+mensagens = Array.new
 
-while x >= 256
-  file = File.open("mensagem_#{x}.txt")
+Dir[ '*' ].select { |f| mensagens.push(f) }
+
+mensagens.each do |n|
+  if n.include? "decoder"
+    next
+  end
+  file = File.open(n)
   file_data = file.read
   plain = Base64.decode64(file_data)
-  File.write("mensagem_#{x}_decoded.txt", file_data)
+  File.write("mensagem_#{n.scan(/\d/).join('')}_decoded.txt", plain)
   file.close
 end
 
