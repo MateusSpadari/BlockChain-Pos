@@ -9,13 +9,12 @@ keys.each do |n|
   file.close
 
   if array_data[n].split().last == "Vazio"
-    puts "bloco #{n+1} correto."
+    # puts "bloco #{n+1} correto."
   elsif array_data[n].split().last == array_data[n-1].split().last
-    puts "bloco #{n+1} correto."
+    # puts "bloco #{n+1} correto."
   else
-    puts "bloco #{n+1} incorreto."
+    # puts "bloco #{n+1} incorreto."
     puts array_data[n].split().last
-    puts array_data[n-1].split().last
   end
 end
 
