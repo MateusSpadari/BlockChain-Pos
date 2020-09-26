@@ -13,13 +13,20 @@ keys_array.each do |value|
     end
 
     if f.include? "decoded"
-      file = File.open(f)
-      file_data = file.read
-      string = private_key.private_decrypt(file_data)
-      File.write("decrypted_messages.txt", string, mode: "a")
-      file.close
+      begin
+        file = File.open(f)
+        file_data = file.read
+        string = private_key.private_decrypt(file_data)
+      rescue => exception
+        next
+      else
+        File.write("decrypted_messages.txt", string + "\n", mode: "a")
+        file.close
+      end
     end
   end
 end
+
+puts "Novo arquivo 'decrypted_messages.txt' criado. "
 
 

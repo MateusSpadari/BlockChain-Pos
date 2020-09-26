@@ -9,15 +9,11 @@ keys.each do |n|
   file.close
 
   if array_data[n].split().last.include? "Vazio"
-    # puts "bloco #{n+1} correto."
-  elsif array_data[n].split().last == array_data[n-1].split("\n")[3].match(/\b[a-f0-9]{64}\b/) 
-    puts "No elsif"
-    # puts "bloco #{n+1} correto."
+    puts "bloco #{n+1} correto."
+  elsif array_data[n].split().last.eql? array_data[n-1].split("\n")[3].match(/\b[a-f0-9]{64}\b/).to_s
+    puts "bloco #{n+1} correto."
   else
-    puts "No else"
-    # puts "bloco #{n+1} incorreto."
-    puts array_data[n].split().last
-    puts array_data[n-1].split("\n")[3].match(/\b[a-f0-9]{64}\b/)
+    puts "bloco #{n+1} incorreto."
   end
 end
 
